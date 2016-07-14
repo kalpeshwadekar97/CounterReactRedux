@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import ChangeText from '../components/changeText';
-import { createStore } from 'redux';
 import { changeText } from '../actions';
 import { connect } from 'react-redux';
-import changeTextReducer from '../reducers';
+
 import {
   StyleSheet,
   View,
   Text,
   TouchableHighlight
 } from 'react-native';
-const store = createStore(changeTextReducer);
 
 class MainAppScreen extends Component{
   constructor(props) {
@@ -38,7 +36,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onTextPress: () => {
       console.log("dispatch");
-      store.dispatch(changeText());
+      dispatch(changeText());
     }
   };
 };
